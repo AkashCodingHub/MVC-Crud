@@ -185,6 +185,8 @@
     <Content Include="Views\CRUD\Fetch.cshtml" />
     <Content Include="Views\CRUD\Details.cshtml" />
     <Content Include="Views\CRUD\Delete.cshtml" />
+    <Content Include="Views\CRUD\refresh.cshtml" />
+    <Content Include="Views\CRUD\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

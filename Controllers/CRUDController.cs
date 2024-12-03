@@ -39,7 +39,7 @@ namespace firstProjectmvc.Controllers
         {
             BALUser userupdate = new BALUser();
             userupdate.UpdateUser(obj);
-          TempData["SuccessMessage"] = "Updated successfully!";
+            TempData["SuccessMessage"] = "Updated successfully!";
             refresh();
             return View();
         }
@@ -59,9 +59,9 @@ namespace firstProjectmvc.Controllers
            objuser.Email = dt.Rows[0]["Email"].ToString();
            objuser.PhoneNumber = dt.Rows[0]["PhoneNumber"].ToString();
            objuser.Address = dt.Rows[0]["Address"].ToString();
-            objuser.CountryId = Convert.ToInt32(dt.Rows[0]["CountryId"].ToString());
-            objuser.StateId = Convert.ToInt32(dt.Rows[0]["StateId"].ToString());
-            objuser.CityId = Convert.ToInt32(dt.Rows[0]["CityId"].ToString());
+            //objuser.CountryId = Convert.ToInt32(dt.Rows[0]["CountryId"].ToString());
+            //objuser.StateId = Convert.ToInt32(dt.Rows[0]["StateId"].ToString());
+            //objuser.CityId = Convert.ToInt32(dt.Rows[0]["CityId"].ToString());
             objuser.Gender = dt.Rows[0]["Gender"].ToString();
             return View(objuser);
         }
@@ -69,7 +69,7 @@ namespace firstProjectmvc.Controllers
         //list
 
         [HttpGet]
-        public ActionResult Details()
+        public ActionResult List()
         {
             BALUser user = new BALUser();
             DataTable dt = new DataTable();
@@ -81,9 +81,9 @@ namespace firstProjectmvc.Controllers
             {
                 User objuser = new User();
                 objuser.UserId = Convert.ToInt32(dt.Rows[i]["UserId"].ToString());
-                objuser.CountryId = Convert.ToInt32(dt.Rows[i]["CountryId"].ToString());
-                objuser.StateId = Convert.ToInt32(dt.Rows[i]["StateId"].ToString());
-                objuser.CityId = Convert.ToInt32(dt.Rows[i]["CityId"].ToString());
+                //objuser.CountryId = Convert.ToInt32(dt.Rows[i]["CountryId"].ToString());
+                //objuser.StateId = Convert.ToInt32(dt.Rows[i]["StateId"].ToString());
+                //objuser.CityId = Convert.ToInt32(dt.Rows[i]["CityId"].ToString());
                 objuser.Name = dt.Rows[i]["Name"].ToString();
                 objuser.Email = dt.Rows[i]["Email"].ToString();
                 objuser.PhoneNumber = dt.Rows[i]["PhoneNumber"].ToString();
@@ -94,6 +94,44 @@ namespace firstProjectmvc.Controllers
             obj.MyUsers = list;
             return View(obj);
         }
+
+        public ActionResult Details(int id)
+        {
+
+            User objdetails = new User();
+            objdetails.UserId = id;
+            BALUser user = new BALUser();
+            DataTable dt = new DataTable();
+            dt = user.FetchUserDetails(objdetails);
+
+
+            List<User> list = new List<User>();
+            User objuser = new User();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+
+                objuser.UserId = Convert.ToInt32(dt.Rows[i]["UserId"].ToString());
+                objuser.Name = dt.Rows[i]["Name"].ToString();
+                objuser.Email = dt.Rows[i]["Email"].ToString();
+                objuser.Gender = dt.Rows[0]["Gender"].ToString();
+                objuser.PhoneNumber = dt.Rows[i]["PhoneNumber"].ToString();
+
+                //objuser.CountryId = Convert.ToInt32(dt.Rows[0]["CountryId"].ToString());
+                //objuser.StateId = Convert.ToInt32(dt.Rows[0]["StateId"].ToString());
+                //objuser.CityId = Convert.ToInt32(dt.Rows[0]["CityId"].ToString());
+
+                //objuser.CountryName = dt.Rows[0]["CountryName"].ToString();
+                //objuser.StateName = dt.Rows[0]["StateName"].ToString();
+                //objuser.CityName = dt.Rows[0]["CityName"].ToString();
+
+                //objuser.Address = dt.Rows[i]["Address"].ToString();
+                list.Add(objuser);
+            }
+            objdetails.MyUsers = list;
+            return View(objuser);
+        }
+
+
         // [HttpPost]
         public void refresh()
         {
@@ -111,9 +149,9 @@ namespace firstProjectmvc.Controllers
                 objuser.Email = dt.Rows[i]["Email"].ToString();
                 objuser.PhoneNumber = dt.Rows[i]["PhoneNumber"].ToString();
                 objuser.Address = dt.Rows[i]["Address"].ToString();
-                objuser.CountryId = Convert.ToInt32(dt.Rows[i]["CountryId"].ToString());
-                objuser.StateId = Convert.ToInt32(dt.Rows[i]["StateId"].ToString());
-                objuser.CityId = Convert.ToInt32(dt.Rows[i]["CityId"].ToString());
+                //objuser.CountryId = Convert.ToInt32(dt.Rows[i]["CountryId"].ToString());
+                //objuser.StateId = Convert.ToInt32(dt.Rows[i]["StateId"].ToString());
+                //objuser.CityId = Convert.ToInt32(dt.Rows[i]["CityId"].ToString());
                 objuser.Gender = dt.Rows[i]["Gender"].ToString();
                 list.Add(objuser);
             }
@@ -150,9 +188,9 @@ namespace firstProjectmvc.Controllers
             objuserdelete.Email = dt.Rows[0]["Email"].ToString();
             objuserdelete.PhoneNumber = dt.Rows[0]["PhoneNumber"].ToString();
             objuserdelete.Address = dt.Rows[0]["Address"].ToString();
-            objuserdelete.CountryId = Convert.ToInt32(dt.Rows[0]["CountryId"].ToString());
-            objuserdelete.StateId = Convert.ToInt32(dt.Rows[0]["StateId"].ToString());
-            objuserdelete.CityId = Convert.ToInt32(dt.Rows[0]["CityId"].ToString());
+            //objuserdelete.CountryId = Convert.ToInt32(dt.Rows[0]["CountryId"].ToString());
+            //objuserdelete.StateId = Convert.ToInt32(dt.Rows[0]["StateId"].ToString());
+            //objuserdelete.CityId = Convert.ToInt32(dt.Rows[0]["CityId"].ToString());
             objuserdelete.Gender = dt.Rows[0]["Gender"].ToString();
 
             return View(objuserdelete);

@@ -34,12 +34,12 @@ namespace firstProjectmvc.Models
         [StringLength(15, ErrorMessage = "Phone number cannot exceed 15 characters.")]
         public string PhoneNumber { get; set; }
 
-        public int CountryId {  get; set; }     
+        //public int CountryId {  get; set; }     
 
-        public int StateId { get; set; }    
+        //public int StateId { get; set; }    
 
-        public int CityId { get; set; } 
-
+        //public int CityId { get; set; } 
+        [Required(ErrorMessage = "Gender is required.")]
         public string Gender { get; set; }      
     }
 }

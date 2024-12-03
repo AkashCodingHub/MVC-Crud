@@ -24,9 +24,9 @@ namespace firstProjectmvc.Models
             cmd.Parameters.AddWithValue("@Address", obj.Address);
             cmd.Parameters.AddWithValue("@Email", obj.Email);
             cmd.Parameters.AddWithValue("@PhoneNumber", obj.PhoneNumber);
-            cmd.Parameters.AddWithValue("@CountryId", obj.CountryId);
-            cmd.Parameters.AddWithValue("@StateId", obj.StateId);
-            cmd.Parameters.AddWithValue("@CityId", obj.CityId);
+            //cmd.Parameters.AddWithValue("@CountryId", obj.CountryId);
+            //cmd.Parameters.AddWithValue("@StateId", obj.StateId);
+            //cmd.Parameters.AddWithValue("@CityId", obj.CityId);
             cmd.Parameters.AddWithValue("@Gender", obj.Gender);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -42,9 +42,9 @@ namespace firstProjectmvc.Models
             cmd.Parameters.AddWithValue("@Address", obj.Address);
             cmd.Parameters.AddWithValue("@Email", obj.Email);
             cmd.Parameters.AddWithValue("@PhoneNumber", obj.PhoneNumber);
-            cmd.Parameters.AddWithValue("@CountryId", obj.CountryId);
-            cmd.Parameters.AddWithValue("@StateId", obj.StateId);
-            cmd.Parameters.AddWithValue("@CityId", obj.CityId);
+            //cmd.Parameters.AddWithValue("@CountryId", obj.CountryId);
+            //cmd.Parameters.AddWithValue("@StateId", obj.StateId);
+            //cmd.Parameters.AddWithValue("@CityId", obj.CityId);
             cmd.Parameters.AddWithValue("@Gender", obj.Gender);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -78,6 +78,8 @@ namespace firstProjectmvc.Models
             con.Close();
             return dt;
         }
+
+      
 
 
 

@@ -7,6 +7,10 @@
 
 <h2 class="text-center">User List</h2>
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
 </p>
@@ -55,7 +59,7 @@
             searching: true,
             ordering: true,
             info: true,
-            lengthMenu: [5, 10, 20, 50], 
+            lengthMenu: [5, 10, 20, 50],
             language: {
                 search: "_INPUT_",
                 searchPlaceholder: "Search users..."

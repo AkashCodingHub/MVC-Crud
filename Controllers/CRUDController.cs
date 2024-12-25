@@ -75,7 +75,7 @@ namespace firstProjectmvc.Controllers
             DataTable dt = new DataTable();
             dt = user.Fetch();
             User obj = new User();
-
+              
             List<User> list = new List<User>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {

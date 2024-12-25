@@ -13,7 +13,6 @@ namespace firstProjectmvc.Models
     {
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-RRP3MVI\\SQLEXPRESS;Initial Catalog=MVCCRUD2;Integrated Security=True;Encrypt=False;");
 
-    
         public void save(User obj)
         {
             con.Open();
@@ -78,10 +77,6 @@ namespace firstProjectmvc.Models
             con.Close();
             return dt;
         }
-
-      
-
-
 
         public DataTable DeleteUser(User obj)
         {
